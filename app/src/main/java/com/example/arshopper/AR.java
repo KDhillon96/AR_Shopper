@@ -1,6 +1,6 @@
 package com.example.arshopper;
 
-import androidx.annotation.RequiresApi;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
@@ -48,7 +48,6 @@ public class AR extends AppCompatActivity {
         }
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,6 +69,306 @@ public class AR extends AppCompatActivity {
                             Anchor anchor = hitResult.createAnchor();
                             ModelRenderable.builder()
                                     .setSource(this, R.raw.armchair)
+                                    .setIsFilamentGltf(true)
+                                    .build()
+                                    .thenAccept(modelRenderable -> addModel(anchor, modelRenderable))
+                                    .exceptionally(throwable -> {
+                                        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                                        builder.setMessage("Something is not right" + throwable.getMessage()).show();
+                                        return null;
+                                    });
+                        }
+                    });
+                } else {
+                    return;
+                }
+                break;
+            case "chair":
+                if (checkSystemSupport(this)) {
+                    arCam = (ArFragment) getSupportFragmentManager().findFragmentById(R.id.arCameraArea);
+                    //ArFragment is linked up with its respective id used in the activity_main.xml
+                    arCam.setOnTapArPlaneListener((hitResult, plane, motionEvent) -> {
+                        clickNo++;
+                        //the 3d model comes to the scene only when clickNo is one that means once
+                        if (clickNo == 1) {
+                            Anchor anchor = hitResult.createAnchor();
+                            ModelRenderable.builder()
+                                    .setSource(this, R.raw.chair)
+                                    .setIsFilamentGltf(true)
+                                    .build()
+                                    .thenAccept(modelRenderable -> addModel(anchor, modelRenderable))
+                                    .exceptionally(throwable -> {
+                                        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                                        builder.setMessage("Something is not right" + throwable.getMessage()).show();
+                                        return null;
+                                    });
+                        }
+                    });
+                } else {
+                    return;
+                }
+                break;
+            case "chaise_haute_conforama":
+                if (checkSystemSupport(this)) {
+                    arCam = (ArFragment) getSupportFragmentManager().findFragmentById(R.id.arCameraArea);
+                    //ArFragment is linked up with its respective id used in the activity_main.xml
+                    arCam.setOnTapArPlaneListener((hitResult, plane, motionEvent) -> {
+                        clickNo++;
+                        //the 3d model comes to the scene only when clickNo is one that means once
+                        if (clickNo == 1) {
+                            Anchor anchor = hitResult.createAnchor();
+                            ModelRenderable.builder()
+                                    .setSource(this, R.raw.chaise_haute_conforama)
+                                    .setIsFilamentGltf(true)
+                                    .build()
+                                    .thenAccept(modelRenderable -> addModel(anchor, modelRenderable))
+                                    .exceptionally(throwable -> {
+                                        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                                        builder.setMessage("Something is not right" + throwable.getMessage()).show();
+                                        return null;
+                                    });
+                        }
+                    });
+                } else {
+                    return;
+                }
+                break;
+            case "las_vegas":
+                if (checkSystemSupport(this)) {
+                    arCam = (ArFragment) getSupportFragmentManager().findFragmentById(R.id.arCameraArea);
+                    //ArFragment is linked up with its respective id used in the activity_main.xml
+                    arCam.setOnTapArPlaneListener((hitResult, plane, motionEvent) -> {
+                        clickNo++;
+                        //the 3d model comes to the scene only when clickNo is one that means once
+                        if (clickNo == 1) {
+                            Anchor anchor = hitResult.createAnchor();
+                            ModelRenderable.builder()
+                                    .setSource(this, R.raw.las_vegas)
+                                    .setIsFilamentGltf(true)
+                                    .build()
+                                    .thenAccept(modelRenderable -> addModel(anchor, modelRenderable))
+                                    .exceptionally(throwable -> {
+                                        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                                        builder.setMessage("Something is not right" + throwable.getMessage()).show();
+                                        return null;
+                                    });
+                        }
+                    });
+                } else {
+                    return;
+                }
+                break;
+            case "modern_armchair":
+                if (checkSystemSupport(this)) {
+                    arCam = (ArFragment) getSupportFragmentManager().findFragmentById(R.id.arCameraArea);
+                    //ArFragment is linked up with its respective id used in the activity_main.xml
+                    arCam.setOnTapArPlaneListener((hitResult, plane, motionEvent) -> {
+                        clickNo++;
+                        //the 3d model comes to the scene only when clickNo is one that means once
+                        if (clickNo == 1) {
+                            Anchor anchor = hitResult.createAnchor();
+                            ModelRenderable.builder()
+                                    .setSource(this, R.raw.modern_armchair)
+                                    .setIsFilamentGltf(true)
+                                    .build()
+                                    .thenAccept(modelRenderable -> addModel(anchor, modelRenderable))
+                                    .exceptionally(throwable -> {
+                                        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                                        builder.setMessage("Something is not right" + throwable.getMessage()).show();
+                                        return null;
+                                    });
+                        }
+                    });
+                } else {
+                    return;
+                }
+                break;
+            case "modern_chair_dark":
+                if (checkSystemSupport(this)) {
+                    arCam = (ArFragment) getSupportFragmentManager().findFragmentById(R.id.arCameraArea);
+                    //ArFragment is linked up with its respective id used in the activity_main.xml
+                    arCam.setOnTapArPlaneListener((hitResult, plane, motionEvent) -> {
+                        clickNo++;
+                        //the 3d model comes to the scene only when clickNo is one that means once
+                        if (clickNo == 1) {
+                            Anchor anchor = hitResult.createAnchor();
+                            ModelRenderable.builder()
+                                    .setSource(this, R.raw.modern_chair_dark)
+                                    .setIsFilamentGltf(true)
+                                    .build()
+                                    .thenAccept(modelRenderable -> addModel(anchor, modelRenderable))
+                                    .exceptionally(throwable -> {
+                                        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                                        builder.setMessage("Something is not right" + throwable.getMessage()).show();
+                                        return null;
+                                    });
+                        }
+                    });
+                } else {
+                    return;
+                }
+                break;
+            case "n01_beech":
+                if (checkSystemSupport(this)) {
+                    arCam = (ArFragment) getSupportFragmentManager().findFragmentById(R.id.arCameraArea);
+                    //ArFragment is linked up with its respective id used in the activity_main.xml
+                    arCam.setOnTapArPlaneListener((hitResult, plane, motionEvent) -> {
+                        clickNo++;
+                        //the 3d model comes to the scene only when clickNo is one that means once
+                        if (clickNo == 1) {
+                            Anchor anchor = hitResult.createAnchor();
+                            ModelRenderable.builder()
+                                    .setSource(this, R.raw.n01_beech)
+                                    .setIsFilamentGltf(true)
+                                    .build()
+                                    .thenAccept(modelRenderable -> addModel(anchor, modelRenderable))
+                                    .exceptionally(throwable -> {
+                                        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                                        builder.setMessage("Something is not right" + throwable.getMessage()).show();
+                                        return null;
+                                    });
+                        }
+                    });
+                } else {
+                    return;
+                }
+                break;
+            case "n01_black":
+                if (checkSystemSupport(this)) {
+                    arCam = (ArFragment) getSupportFragmentManager().findFragmentById(R.id.arCameraArea);
+                    //ArFragment is linked up with its respective id used in the activity_main.xml
+                    arCam.setOnTapArPlaneListener((hitResult, plane, motionEvent) -> {
+                        clickNo++;
+                        //the 3d model comes to the scene only when clickNo is one that means once
+                        if (clickNo == 1) {
+                            Anchor anchor = hitResult.createAnchor();
+                            ModelRenderable.builder()
+                                    .setSource(this, R.raw.n01_black)
+                                    .setIsFilamentGltf(true)
+                                    .build()
+                                    .thenAccept(modelRenderable -> addModel(anchor, modelRenderable))
+                                    .exceptionally(throwable -> {
+                                        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                                        builder.setMessage("Something is not right" + throwable.getMessage()).show();
+                                        return null;
+                                    });
+                        }
+                    });
+                } else {
+                    return;
+                }
+                break;
+            case "ottoman":
+                if (checkSystemSupport(this)) {
+                    arCam = (ArFragment) getSupportFragmentManager().findFragmentById(R.id.arCameraArea);
+                    //ArFragment is linked up with its respective id used in the activity_main.xml
+                    arCam.setOnTapArPlaneListener((hitResult, plane, motionEvent) -> {
+                        clickNo++;
+                        //the 3d model comes to the scene only when clickNo is one that means once
+                        if (clickNo == 1) {
+                            Anchor anchor = hitResult.createAnchor();
+                            ModelRenderable.builder()
+                                    .setSource(this, R.raw.ottoman)
+                                    .setIsFilamentGltf(true)
+                                    .build()
+                                    .thenAccept(modelRenderable -> addModel(anchor, modelRenderable))
+                                    .exceptionally(throwable -> {
+                                        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                                        builder.setMessage("Something is not right" + throwable.getMessage()).show();
+                                        return null;
+                                    });
+                        }
+                    });
+                } else {
+                    return;
+                }
+                break;
+            case "recliner_hair":
+                if (checkSystemSupport(this)) {
+                    arCam = (ArFragment) getSupportFragmentManager().findFragmentById(R.id.arCameraArea);
+                    //ArFragment is linked up with its respective id used in the activity_main.xml
+                    arCam.setOnTapArPlaneListener((hitResult, plane, motionEvent) -> {
+                        clickNo++;
+                        //the 3d model comes to the scene only when clickNo is one that means once
+                        if (clickNo == 1) {
+                            Anchor anchor = hitResult.createAnchor();
+                            ModelRenderable.builder()
+                                    .setSource(this, R.raw.recliner_chair)
+                                    .setIsFilamentGltf(true)
+                                    .build()
+                                    .thenAccept(modelRenderable -> addModel(anchor, modelRenderable))
+                                    .exceptionally(throwable -> {
+                                        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                                        builder.setMessage("Something is not right" + throwable.getMessage()).show();
+                                        return null;
+                                    });
+                        }
+                    });
+                } else {
+                    return;
+                }
+                break;
+            case "rockingchair":
+                if (checkSystemSupport(this)) {
+                    arCam = (ArFragment) getSupportFragmentManager().findFragmentById(R.id.arCameraArea);
+                    //ArFragment is linked up with its respective id used in the activity_main.xml
+                    arCam.setOnTapArPlaneListener((hitResult, plane, motionEvent) -> {
+                        clickNo++;
+                        //the 3d model comes to the scene only when clickNo is one that means once
+                        if (clickNo == 1) {
+                            Anchor anchor = hitResult.createAnchor();
+                            ModelRenderable.builder()
+                                    .setSource(this, R.raw.rockingchair)
+                                    .setIsFilamentGltf(true)
+                                    .build()
+                                    .thenAccept(modelRenderable -> addModel(anchor, modelRenderable))
+                                    .exceptionally(throwable -> {
+                                        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                                        builder.setMessage("Something is not right" + throwable.getMessage()).show();
+                                        return null;
+                                    });
+                        }
+                    });
+                } else {
+                    return;
+                }
+                break;
+            case "silla_moderna":
+                if (checkSystemSupport(this)) {
+                    arCam = (ArFragment) getSupportFragmentManager().findFragmentById(R.id.arCameraArea);
+                    //ArFragment is linked up with its respective id used in the activity_main.xml
+                    arCam.setOnTapArPlaneListener((hitResult, plane, motionEvent) -> {
+                        clickNo++;
+                        //the 3d model comes to the scene only when clickNo is one that means once
+                        if (clickNo == 1) {
+                            Anchor anchor = hitResult.createAnchor();
+                            ModelRenderable.builder()
+                                    .setSource(this, R.raw.silla_moderna)
+                                    .setIsFilamentGltf(true)
+                                    .build()
+                                    .thenAccept(modelRenderable -> addModel(anchor, modelRenderable))
+                                    .exceptionally(throwable -> {
+                                        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                                        builder.setMessage("Something is not right" + throwable.getMessage()).show();
+                                        return null;
+                                    });
+                        }
+                    });
+                } else {
+                    return;
+                }
+                break;
+            case "sofa_armchair":
+                if (checkSystemSupport(this)) {
+                    arCam = (ArFragment) getSupportFragmentManager().findFragmentById(R.id.arCameraArea);
+                    //ArFragment is linked up with its respective id used in the activity_main.xml
+                    arCam.setOnTapArPlaneListener((hitResult, plane, motionEvent) -> {
+                        clickNo++;
+                        //the 3d model comes to the scene only when clickNo is one that means once
+                        if (clickNo == 1) {
+                            Anchor anchor = hitResult.createAnchor();
+                            ModelRenderable.builder()
+                                    .setSource(this, R.raw.sofa_armchair)
                                     .setIsFilamentGltf(true)
                                     .build()
                                     .thenAccept(modelRenderable -> addModel(anchor, modelRenderable))
