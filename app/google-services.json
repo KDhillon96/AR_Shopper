@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "577181766081",
+    "project_id": "ar-shopper",
+    "storage_bucket": "ar-shopper.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:577181766081:android:215110b8776937869c5f40",
+        "android_client_info": {
+          "package_name": "com.example.arshopper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "577181766081-lqlo7pemdk71lbjhs0cfa5a0g1lnoptt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.arshopper",
+            "certificate_hash": "40a5ce424dc5a0c9e2b53ef53ff74b04590e8607"
+          }
+        },
+        {
+          "client_id": "577181766081-chm2jitfnf9cmro8v8n94cetgmnv0vqv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAuKjUHCwSzb0SVzOOXTaNSau57ls5FWpQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "577181766081-chm2jitfnf9cmro8v8n94cetgmnv0vqv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

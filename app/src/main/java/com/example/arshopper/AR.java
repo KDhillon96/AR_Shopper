@@ -10,7 +10,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.RequiresApi;
 import android.widget.Toast;
 
 import com.google.ar.core.Anchor;
@@ -60,7 +59,7 @@ public class AR extends AppCompatActivity {
         if(extras != null)
             ProjectName = extras.getString("name");
         switch (ProjectName){
-            case "Dermascape":
+            case "armchair":
                 if (checkSystemSupport(this)) {
                     arCam = (ArFragment) getSupportFragmentManager().findFragmentById(R.id.arCameraArea);
                     //ArFragment is linked up with its respective id used in the activity_main.xml
@@ -90,7 +89,7 @@ public class AR extends AppCompatActivity {
 
     }
 
-    private Object addModel(Anchor anchor, ModelRenderable modelRenderable) {
+    private void addModel(Anchor anchor, ModelRenderable modelRenderable) {
         AnchorNode anchorNode = new AnchorNode(anchor);
         // Creating a AnchorNode with a specific anchor
         anchorNode.setParent(arCam.getArSceneView().getScene());
