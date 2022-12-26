@@ -283,7 +283,7 @@ public class AR extends AppCompatActivity {
                     return;
                 }
                 break;
-            case "recliner_hair":
+            case "recliner_chair":
                 if (checkSystemSupport(this)) {
                     arCam = (ArFragment) getSupportFragmentManager().findFragmentById(R.id.arCameraArea);
                     //ArFragment is linked up with its respective id used in the activity_main.xml
